@@ -69,6 +69,9 @@ Facebook
  * };
  */
 
+// Time Complexity:  O(m*log(n))
+// Space Complexity: O(1)
+
 class Solution {
     public int leftMostColumnWithOne(BinaryMatrix binaryMatrix) {
       List<Integer> dimensions = binaryMatrix.dimensions();
