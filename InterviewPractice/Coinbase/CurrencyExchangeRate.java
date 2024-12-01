@@ -89,6 +89,118 @@ public class Main {
 
 // // ************************* Multiplication overhead *************************
 
+// import java.util.*;
+
+// public class CurrencyExchange {
+//     public static void main(String[] args) {
+//         // Sample input data (you can replace this with actual input reading from stdin)
+//         String[] data = {
+//             "USD,EUR,0.85;USD,GBP,0.75;EUR,GBP,0.88;GBP,JPY,150.0"
+//         };
+
+//         // Parsing input data
+//         List<Exchange> exchanges = new ArrayList<>();
+//         for (String d : data[0].split(";")) {
+//             String[] parts = d.split(",");
+//             String src = parts[0];
+//             String des = parts[1];
+//             double weight = Double.parseDouble(parts[2]);
+//             exchanges.add(new Exchange(src, des, weight));
+//         }
+
+//         // Test the function
+//         System.out.println(maxAmountofExchange(exchanges, "USD", "JPY"));
+//     }
+
+//     // Exchange rate class to hold the data
+//     static class Exchange {
+//         String src, des;
+//         double weight;
+
+//         public Exchange(String src, String des, double weight) {
+//             this.src = src;
+//             this.des = des;
+//             this.weight = weight;
+//         }
+//     }
+
+//     // Compute the exchange rate
+//     public static double maxAmountofExchange(List<Exchange> exchanges, String fromCurrency, String toCurrency) {
+//         // Build the graph
+//         Map<String, List<Pair>> graph = new HashMap<>();
+//         for (Exchange exchange : exchanges) {
+//             graph.putIfAbsent(exchange.src, new ArrayList<>());
+//             graph.putIfAbsent(exchange.des, new ArrayList<>());
+//             graph.get(exchange.src).add(new Pair(exchange.des, exchange.weight));
+//             graph.get(exchange.des).add(new Pair(exchange.src, 1.0 / exchange.weight));
+//         }
+
+//         // DFS recursive
+//         double rate = -1.0;
+//         Set<String> visited = new HashSet<>();
+
+//         // DFS Recursive function
+//         rate = dfs(graph, fromCurrency, toCurrency, 1.0, visited, rate);
+        
+//         // DFS Iterative function (alternative approach)
+//         rate = dfsIterative(graph, fromCurrency, toCurrency);
+        
+//         return rate;
+//     }
+
+//     // DFS Recursive function
+//     public static double dfs(Map<String, List<Pair>> graph, String src, String des, double exch, Set<String> visited, double rate) {
+//         if (!graph.containsKey(src) || !graph.containsKey(des)) {
+//             return rate;
+//         }
+//         if (src.equals(des)) {
+//             rate = Math.max(rate, exch);
+//             return rate;
+//         }
+//         visited.add(src);
+//         for (Pair neighbor : graph.get(src)) {
+//             if (!visited.contains(neighbor.currency)) {
+//                 rate = dfs(graph, neighbor.currency, des, exch * neighbor.weight, visited, rate);
+//             }
+//         }
+//         visited.remove(src);
+//         return rate;
+//     }
+
+//     // Helper class to represent a currency pair
+//     static class Pair {
+//         String currency;
+//         double weight;
+
+//         public Pair(String currency, double weight) {
+//             this.currency = currency;
+//             this.weight = weight;
+//         }
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // public class CurrencyConverter {
 //     public static void main(String[] args)throws Exception{
 //         /*
