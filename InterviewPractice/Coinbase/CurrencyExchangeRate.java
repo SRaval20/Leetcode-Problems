@@ -142,9 +142,6 @@ public class Main {
 //         // DFS Recursive function
 //         rate = dfs(graph, fromCurrency, toCurrency, 1.0, visited, rate);
         
-//         // DFS Iterative function (alternative approach)
-//         rate = dfsIterative(graph, fromCurrency, toCurrency);
-        
 //         return rate;
 //     }
 
