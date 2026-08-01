@@ -69,10 +69,10 @@ public class Main {
     //     Queue<Integer> minHeap = new PriorityQueue<>();
     //     minHeap.add(intervals.get(0).end);
     //     for(Interval meeting : intervals) {
-    //         if(!pq.isEmpty() && meeting.start >= minHeap.peek()) {
-    //             pq.poll();
+    //         if(!minHeap.isEmpty() && meeting.start >= minHeap.peek()) {
+    //             minHeap.poll();
     //         }
-    //         pq.offer(meeting.end);
+    //         minHeap.offer(meeting.end);
     //     }
     //     return minHeap.size();
     // }
