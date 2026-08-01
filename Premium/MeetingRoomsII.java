@@ -63,17 +63,17 @@ public class Main {
         return minHeap.size();
     }
     
-    // another logic
-    public static int canAttendMeetings(List<Interval> intervals) {
-        Collections.sort(intervals, (a, b)->a.start-b.start);
-        Queue<Integer> minHeap = new PriorityQueue<>();
-        minHeap.add(intervals.get(0).end);
-        for(Interval meeting : intervals) {
-            if(!pq.isEmpty() && meeting.start >= minHeap.peek()) {
-                pq.poll();
-            }
-            pq.offer(meeting.end);
-        }
-        return minHeap.size();
-    }
+    // ******************** ANOTHER LOGIC ********************
+    // public static int canAttendMeetings(List<Interval> intervals) {
+    //     Collections.sort(intervals, (a, b)->a.start-b.start);
+    //     Queue<Integer> minHeap = new PriorityQueue<>();
+    //     minHeap.add(intervals.get(0).end);
+    //     for(Interval meeting : intervals) {
+    //         if(!pq.isEmpty() && meeting.start >= minHeap.peek()) {
+    //             pq.poll();
+    //         }
+    //         pq.offer(meeting.end);
+    //     }
+    //     return minHeap.size();
+    // }
 }
